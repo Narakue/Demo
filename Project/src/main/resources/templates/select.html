@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>课程</th>
+        <th>数量</th>
+        <th>已被选</th>
+        <th>选课</th>
+    </tr>
+    <tr>
+        <td>Java</td>
+        <td id="count">10</td>
+        <td id="selected"></td>
+        <td>
+            <button id="btn">选！</button>
+        </td>
+    </tr>
+</table>
+<br><br>
+<form method="post" action="/teacher/uploadFile" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="上传">
+</form>
+
+
+<script type="text/javascript">
+    var obj;
+    var teacherId = 't123';
+
+    window.onload = function () {
+        send();
+    }
+
+    $("#btn").click(
+        function () {
+            $.ajax({
+                url: 'http://localhost:8080/student/selectSubject',
+                type: 'get',
+                data: {'id': '1'},
+                success: function (data) {
+                    console.log(data)
+                    // send();
+                }
+            })
+        }
+    )
+
+    // websocket连接的地址为：ws:// + websocket的URL
+    var websocket = new WebSocket("ws://localhost:8080/selectSubject");
+
+    //接收到消息的回调方法
+    websocket.onmessage = function (event) {
+        console.log(event.data)
+        obj = JSON.parse(event.data);
+        $("#count").html(obj[1][0].amount);
+        $("#selected").html(obj[1][0].selected);
+        // console.log(obj[1][0].selected);
+    }
+
+    //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+    window.onbeforeunload = function () {
+        closeWebSocket();
+    }
+
+    //发送消息
+    function send() {
+        websocket.send('t123');
+    }
+</script>
+</body>
+</html>

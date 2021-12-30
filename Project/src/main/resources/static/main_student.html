@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/semantic.min.js"></script>
+
+    <script src="/js/student.js"></script>
+    <script src="/js/header.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+</head>
+<body>
+<!-- -->
+<div class="up1">
+    <!--  TODO: 图片地址需要修改-->
+    <img src="/img/title.png" width="600px" height="65px" style="float: left ;margin-left: 10px">
+
+    <img src="/img/rili1.png" class="img1" style="padding-left: 3%;padding-bottom: 10px"/>&nbsp;
+    <div style="display: inline-block;text-align: center">
+        <span class="span1" id="time" style="color: rgb(41,76,125);"></span>
+    </div>
+    <!--TODO:时间-->
+    <img src="/img/biye.png" class="img1" style="padding-top:1px;padding-bottom: 10px"/>&nbsp;
+    <span class="span1" id="counttime" style="color: rgb(41,76,125);"></span><!--TODO:时间-->
+
+    <img src="/img/xuesehng.png" class="img1" style="padding-top:1px;padding-bottom: 10px"/>&nbsp;
+    <span class="span1" id="name" style="color: rgb(41,76,125)">zhb</span><!--TODO: name-->
+
+    <img src="/img/tuichu.png" class="img1" onclick="exit()" style="padding-top:1px;padding-bottom: 10px;cursor:pointer;"/>&nbsp;
+    <span class="span1" onclick="exit()" style="color: rgb(41,76,125);cursor:pointer;">退出</span>
+    <!--TODO:exit-->
+</div>
+<!---->
+<!--<div class="up2">-->
+<!--    <div class="up1_div" style="float: left">-->
+<!--        <div class="up1_div_init">-->
+<!--            <span id="page1" class="span2">选择指导老师及题目</span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="up1_div" style="float: left">-->
+<!--        <div class="up1_div_init" style="padding-left: 30%;width: 30%">-->
+<!--            <span id="page2" class="span2">论文管理</span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="up2">
+    <ul>
+        <li class="active up2_item">
+            <span class="span2" onclick="modify('选择课题')">选择课题</span>
+        </li>
+        <li class="up2_item">
+            <span class="span2" onclick="get_applicationTeacher;modify('申请列表')">申请列表</span>
+        </li>
+        <li class="up2_item">
+            <span class="span2" onclick="modify('论文管理')">论文管理</span>
+        </li>
+    </ul>
+</div>
+<!---->
+<!--<div class="up2" style="background-color: #F8E2D7">-->
+<!--  <p align="center" style="width: 100%; height: 100%;display: block;color: #666666; font-size: 200%; padding-top: 1%">选择指导老师</p>&lt;!&ndash;TODO:内容&ndash;&gt;-->
+<!--</div>-->
+<!---->
+<div class="up3">
+    <span class="span4" id="student_lujing">当前位置: 河北师范大小毕业选题系统->:选择课题</span><!--TODO:位置-->
+</div>
+<!---->
+<div class="up4">
+    <div class="up4_div">
+        <div class="up4_left" style="text-decoration: none;">
+            <div class="ui styled accordion" style="float: left">
+                <div class="active title" style="text-decoration: none;background:rgb(41,76,125);color:#FFFFFF;">
+                    <i class="dropdown icon" style="text-decoration: none;padding-left: 0px"></i>指导老师列表
+                </div>
+                <!--                js处理-->
+                <div class="active content" id="allTeacher" style="background:  rgb(41,76,125); ">
+
+                </div>
+            </div>
+            <script>
+                $('.ui.accordion').accordion('refresh');
+            </script>
+        </div>
+        <div class="up4_middle"></div>
+        <div class="up4_right">
+            <table border="1" class="tr-table1">
+                <tr class="num">
+                    <th colspan="5" id="apply_count">当前老师名额状态</th>
+                    <th colspan="4" id="refuse">当前老师剩余总名额数</th>
+                </tr>
+                <tr class="tr-title">
+                    <th>序号</th>
+                    <th>选题</th>
+                    <th>简介</th>
+                    <th>需求人数</th>
+                    <th>报名人数</th>
+                    <th>已选人数</th>
+                    <th>剩余人数</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </table>
+
+            <!--            js展示所有课程-->
+            <table class="tr-table2">
+                <tbody id="subject">
+                </tbody>
+            </table>
+
+        </div>
+        <div class="up4_middle2"></div>
+    </div>
+    <!--    论文管理-->
+    <div class="up4_div">
+<!--        已申请的老师-->
+        <div class="up4_left" style="text-decoration: none;">
+            <div class="ui styled accordion" style="float: left">
+                <div class="active title" style="text-decoration: none;background:rgb(41,76,125);color:#FFFFFF;">
+                    <i class="dropdown icon" style="text-decoration: none;padding-left: 0px"></i>指导老师列表
+                </div>
+                <!--                js处理-->
+                <div class="active content" id="allTeacher  " style="background:  rgb(41,76,125); ">
+
+                </div>
+            </div>
+            <script>
+                $('.ui.accordion').accordion('refresh');
+            </script>
+        </div>
+        <div class="up4_middle"></div>
+        <div class="up4_right" style="background: url('../img/c.jpg')">
+            <table border="1" class="table_stu_L_applied">
+                <tr >
+                    <td class="td-left1" height="50px">指导老师</td>
+                    <td id="teacher1" height="50px">未选</td>
+                </tr>
+                <tr>
+                    <td class="td-left1" height="50px">论文题目</td>
+                    <td id="subject1" height="50px">未选</td>
+                </tr>
+                <tr>
+                    <td class="td-left1" height="50px">当前状态</td>
+                    <td id="status1" height="50px">未选</td>
+                </tr>
+                <tr>
+                    <td class="td-left1" height="50px">手机号</td>
+                    <td id="phone1" height="50px">未选</td>
+                </tr>
+                <tr>
+                    <td class="td-left1" height="50px">QQ号</td>
+                    <td id="qq1" height="50px">未选</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="border-bottom-width:0px;border-left-width:0px;border-right-width: 0px"><button class="exit_sk" onclick="cancelSubject()" style="cursor:pointer;width:25%;height:50px; padding:1px;  margin-right:10px  ;background-color: 	#B22222;  border-color: #294c7d;   color: #fff;  -moz-border-radius: 10px;    -webkit-border-radius: 10px;   border-radius: 10px; /* future proofing */    -khtml-border-radius: 10px; /* for old Konqueror browsers */    text-align: center;      vertical-align: middle;   border: 1px solid transparent;   font-weight: 900;    font-size:125%  ;border:solid 3px #6c9de1; ">退选</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="up4_middle2"></div>
+    </div>
+    <div class="up4_div">
+        <div class="up4_left" style="text-decoration: none;">
+            <div class="ui styled accordion" style="float: left">
+                <div class="active title" style="text-decoration: none;background:rgb(41,76,125);color:#FFFFFF;">
+                    <i class="dropdown icon" style="text-decoration: none;padding-left: 0px"></i>指导老师列表
+                </div>
+                <!--                js处理-->
+                <div class="active content" id="allTeacher  " style="background:  rgb(41,76,125); ">
+
+                </div>
+            </div>
+            <script>
+                $('.ui.accordion').accordion('refresh');
+            </script>
+        </div>
+        <div class="up4_middle"></div>
+        <div class="up4_right" style="background: url('../img/aa.jpg')">
+            <table class="table_stu_R_manage" border="1" style="font-size: 20px">
+                <tr>
+                    <td class="td-left">指导老师</td>
+                    <td id="teacher_name">未选</td>
+                </tr>
+                <tr>
+                    <td class="td-left">论文题目</td>
+                    <td id="subject_name">未选</td>
+                </tr>
+                <tr>
+                    <td class="td-left">论文上传</td>
+                    <td>
+                        <image style="width:30px;height: 30px;cursor: pointer" src="img/shangchuan.png"></image>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-left">论文下载</td>
+                    <td>
+                        <image style="width:30px;height: 30px;cursor: pointer" src="img/xiazai.png"></image>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-left">指导老师手机号</td>
+                    <td id="teacher_phone">未选</td>
+                </tr>
+                <tr>
+                    <td class="td-left">指导老师QQ号</td>
+                    <td id="teacher_qq">未选</td>
+                </tr>
+            </table>
+        </div>
+        <div class="up4_middle2"></div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        getName();
+
+        var nowdate = new Date();
+        var graduate = "2022-07-01";
+        fnDate(nowdate);
+        fncountTime(nowdate, graduate);
+
+        getAllteacher();
+        get_applicationTeacher();
+        get_subject_manager();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/semantic.min.js"></script>
+
+    <script src="/js/teacher.js"></script>
+    <script src="/js/header.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/teacher.css">
+    <link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+</head>
+<body>
+<!-- -->
+<div class="up1">
+    <!--  TODO: 图片地址需要修改-->
+    <img src="/img/title.png" width="600px" height="65px" style="float: left ;margin-left: 10px">
+
+    <img src="/img/rili1.png" class="img1" style="padding-left: 3%;padding-bottom: 10px"/>&nbsp;
+    <div style="display: inline-block;text-align: center">
+        <span class="span1" id="time" style="color: rgb(41,76,125);"></span>
+    </div>
+    <!--TODO:时间-->
+    <img src="/img/biye.png" class="img1" style="padding-top:1px;padding-bottom: 10px" />&nbsp;
+    <span class="span1" id="counttime" style="color: rgb(41,76,125);"></span><!--TODO:时间-->
+
+    <img src="/img/xuesehng.png" class="img1" style="padding-top:1px;padding-bottom: 10px"/>&nbsp;
+    <span class="span1" id="name" style="color: rgb(41,76,125)">zhb</span><!--TODO: name-->
+
+    <img src="/img/tuichu.png" class="img1" onclick="exit()" style="padding-top:1px;padding-bottom: 10px;cursor:pointer"/>&nbsp;
+    <span class="span1" onclick="exit()" style="color: rgb(41,76,125);cursor:pointer">退出</span>
+    <!--TODO:exit-->
+</div>
+<!---->
+<!--<div class="up2">-->
+<!--    <div class="up1_div" style="float: left">-->
+<!--        <div class="up1_div_init">-->
+<!--            <span id="page1" class="span2">选择指导老师及题目</span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="up1_div" style="float: left">-->
+<!--        <div class="up1_div_init" style="padding-left: 30%;width: 30%">-->
+<!--            <span id="page2" class="span2">论文管理</span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="up2">
+    <ul>
+        <li class="active up2_item">
+            <span class="span2" onclick="modify('论文管理')">论文管理</span>
+        </li>
+        <li class="up2_item">
+            <span class="span2" onclick="modify('同意列表')">同意列表</span>
+        </li>
+        <li class="up2_item">
+            <span class="span2" onclick="modify('申请列表')">申请列表</span>
+        </li>
+    </ul>
+</div>
+<!---->
+<!--<div class="up2" style="background-color: #F8E2D7">-->
+<!--  <p align="center" style="width: 100%; height: 100%;display: block;color: #666666; font-size: 200%; padding-top: 1%">选择指导老师</p>&lt;!&ndash;TODO:内容&ndash;&gt;-->
+<!--</div>-->
+<!---->
+<div class="up3">
+    <span class="span4" id="teacher_lujing">当前位置: 河北师范大小毕业选题系统->:论文管理</span><!--TODO:位置-->
+</div>
+<!---->
+<div class="up4">
+    <!--    one-->
+    <div class="up4_div">
+        <div class="up4_left" style="text-decoration: none">
+            <div class="ui styled accordion" style="float: left">
+                <div class="active title" style="text-decoration: none;background:rgb(41,76,125);color:#FFFFFF;">
+                    <i class="dropdown icon" style="text-decoration: none"></i>
+                    老师选题列表
+                </div>
+                <!--                js处理-->
+                <div class="active content" id="allTeacherOne" style="background: rgb(41,76,125)">
+
+                </div>
+            </div>
+            <script>
+                $('.ui.accordion').accordion('refresh');
+            </script>
+        </div>
+        <div class="up4_middle"></div>
+        <div class="up4_right" style="background: url('../img/d.jpg')">
+            <table border="1" class="tr-table1">
+                <tr class="num" >
+                    <td colspan="2" ><button style="width: 100%"><a href = "JavaScript:void(0)" onclick = "document.getElementById('light1').style.display='block';document.getElementById('fade1').style.display='block'">添加题目</a></button></td>
+                    <td colspan="7" style="background-color: rgb(41,76,125);color: white;font-size: 30px;font-family: 隶书" >欢迎使用毕业设计选题系统</td>
+                </tr>
+                <tr class="tr-title">
+                    <th style="width:8%">选题编号</th>
+                    <th style="width:20%">题目</th>
+                    <th style="width:8%">简介</th>
+                    <th style="width:8%">需求人数</th>
+                    <th style="width:8%">报名人数</th>
+                    <th style="width:8%">已选人数</th>
+                    <th style="width:8%">剩余人数</th>
+                    <th colspan="2" style="width:24%">操作</th>
+                </tr>
+            </table>
+            <table class="tr-tableA2">
+                <tbody id="allTeacherOneRight" style="border: Solid #0f0f10 1px ;">
+                </tbody>
+            </table>
+        </div>
+        <div class="up4_middle2"></div>
+    </div>
+    <!--    two-->
+    <div class="up4_div">
+        <div class="up4_left" style="text-decoration: none">
+            <div class="ui styled accordion" style="float: left">
+                <div class="active title" style="text-decoration: none;background:rgb(41,76,125);color:#FFFFFF;">
+                    <i class="dropdown icon" style="text-decoration: none"></i>
+                    已同意学生列表
+                </div>
+                <!--                js处理-->
+                <div class="active content" id="allTeacherTwo" style="background:rgb(41,76,125)">
+
+                </div>
+            </div>
+            <script>
+                $('.ui.accordion').accordion('refresh');
+            </script>
+        </div>
+        <div class="up4_middle"></div>
+        <div class="up4_right " style="background: url('../img/aa.jpg')">
+            <table border="1" class="tr-table3">
+                <tr class="tr-title2">
+                    <th style="width:8%">学生编号</th>
+                    <th style="width:8%">姓名</th>
+                    <th style="width:20%">选题</th>
+                    <th style="width:8%">简介</th>
+                </tr>
+            </table>
+            <table class="tr-tableA3">
+                <tbody id="all_agreed_student">
+                </tbody>
+            </table>
+        </div>
+        <div class="up4_middle2"></div>
+    </div>
+    <!--    three-->
+    <div class="up4_div">
+        <div class="up4_left" style="text-decoration: none">
+            <div class="ui styled accordion" style="float: left">
+                <div class="active title" style="text-decoration: none;background:rgb(41,76,125);color:#FFFFFF;">
+                    <i class="dropdown icon" style="text-decoration: none"></i>
+                    申请学生列表
+                </div>
+                <!--                js处理-->
+                <div class="active content" id="allTeacherThree" style="background: rgb(41,76,125)">
+
+                </div>
+            </div>
+            <script>
+                $('.ui.accordion').accordion('refresh');
+            </script>
+        </div>
+        <div class="up4_middle"></div>
+        <div class="up4_right" style="background: url('../img/bb.jpg')">
+            <table border="1" class="tr-table3">
+                <tr class="tr-title2">
+                    <th style="width:8%">学生编号</th>
+                    <th style="width:8%">姓名</th>
+                    <th style="width:20%">选题</th>
+                    <th style="width:8%">简介</th>
+                    <!--                    <th style="width:8%">需求人数</th>-->
+                    <!--                    <th style="width:8%">报名人数</th>-->
+                    <!--                    <th style="width:8%">已选人数</th>-->
+                    <!--                    <th style="width:8%">剩余人数</th>-->
+                    <th colspan="2" style="width:24%">操作</th>
+                </tr>
+            </table>
+            <table class="tr-tableA3">
+                <tbody id="allTeacherThreeRight">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="up4_middle2"></div>
+    </div>
+</div>
+<div id="light1" class="white_content">
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">课题总数</div><input type="text" id="amount" class="input"> <br>
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">基本需求</div><input type="text" id="basic" class="input"> <br>
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">课题名称</div><input type="text" id="divName" class="input"> <br>
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">参考文献</div><input type="text" id="reference" class="input"> <br>
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">研究目标</div><input type="text" id="research" class="input"> <br>
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">文档链接</div><input type="text" id="url" class="input"> <br>
+    <button class="under-left"><a href = "javascript:void(0)" onclick = "document.getElementById('light1').style.display='none';document.getElementById('fade1').style.display='none';onclickInsert()">提交</a></button>
+    <button class="under-right"><a href = "javascript:void(0)" onclick = "document.getElementById('light1').style.display='none';document.getElementById('fade1').style.display='none';">关闭</a></button>
+</div>
+<div id="fade1" class="black_overlay"></div>
+
+<div id="light2" class="white_content">
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">课题总数</div><input type="text" id="amount2" class="input"> <br>
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">基本需求</div><input type="text" id="basic2" class="input"> <br>
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">课题名称</div><input type="text" id="divName2" class="input"> <br>
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">参考文献</div><input type="text" id="reference2" class="input"> <br>
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">研究目标</div><input type="text" id="research2" class="input"> <br>
+    <div style="text-align: center;font-size: 10px; display: inline;font-weight:bold">文档链接</div><input type="text" id="url2" class="input"> <br>
+    <button class="under-left"><a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none';onclickNewOne()">提交</a></button>
+    <button class="under-right"><a href = "javascript:void(0)" onclick = "document.getElementById('light2').style.display='none';document.getElementById('fade2').style.display='none';">关闭</a></button>
+</div>
+<div id="fade2" class="black_overlay"></div>
+<script>
+    window.onload = function () {
+        getName();
+
+        var nowdate = new Date();
+        var graduate = "2022-07-01";
+        fnDate(nowdate);
+        fncountTime(nowdate, graduate);
+
+        get_agreed_student();
+
+        select_student_by_teacher_id()
+
+        query_subject_by_teacher_id();
+    }
+</script>
+</body>
+</html>

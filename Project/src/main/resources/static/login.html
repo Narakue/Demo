@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/login.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
+</head>
+<body>
+<!--总体的div-->
+<div class="background main">
+    <!--    28上下分图片-->
+    <div class="up">
+        <!--        中间的图片矩阵-->
+        <div class="up_img">
+            <!--            左右结构,左边为校徽图片,右边为项目名称-->
+            <div class="up_img_left">
+                <img src="/img/sign.png" style="padding-top: 13%; height: 60%;"/>
+            </div>
+            <div class="up_img_right">
+                <img src="/img/title1.png" style="padding-top: 13%; height: 60%;"/>
+            </div>
+        </div>
+    </div>
+    <div class="down">
+        <!--        注册程序-->
+        <div class="down_img">
+            <div class="down_img_something">
+                <div class="down_img_form">
+                    <!--                    六个内容:登录文字,登录框,密码框,登录确定,身份选择,记住密码-->
+                    <div class="form_top" style="cursor: default">登录</div>
+                    <!--                    <form>-->
+                    <div class="road">
+                        <div class="road_input">
+                            <img src="/img/name.png" style="width: 8%; height: 8%; float: left; padding-right: 5%"/>
+                            <input type="text" name="name" class="input" style="font-size: 25px; color: #666"
+                                   placeholder="用户名" id="username"/>
+                        </div>
+                    </div>
+                    <div class="road">
+                        <div class="road_input">
+                            <img src="/img/password.png"
+                                 style="width:6%; height: 6%; float: left; padding-right: 5%"/>
+                            <input type="password" name="password" class="input"
+                                   style="margin-left: 2%;font-size: 25px; color: #666" placeholder="密码" id="password"/>
+                        </div>
+                    </div>
+                    <br>
+                    <input type="radio" name="profession" value="teacher" class="radio" style="cursor:pointer;margin-left: 75px">
+                    <p style="font-size: 30px;display: inline;color: aliceblue;cursor: default;" >教师</p>
+                    <input type="radio" name="profession" value="student" class="radio" style="cursor:pointer">
+                    <p style="font-size: 30px;display: inline;color: aliceblue;cursor: default">学生</p>
+                    <div>
+                        <button type="submit" name="submit" class="submit" onclick="submit()" style="cursor:pointer">提交</button>
+                    </div>
+                    <br>
+                    <input type="checkbox" name="remember" value="remember" class="radio"
+                           style="text-align:center;vertical-align:middle;margin-left: 300px" id = "remember">
+                    <p style="font-size: 10px;display: inline;color: aliceblue; cursor: default">记住密码</p>
+                    <br>
+                    <!--                    </form>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

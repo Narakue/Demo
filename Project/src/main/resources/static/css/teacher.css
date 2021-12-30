@@ -1,0 +1,91 @@
+.num button{
+    width: 50%;
+    height: 100%;
+    line-height: 100%;
+    font-size: 20px;
+}
+.tr-tableA{
+    width: 100%;
+    height:10%;
+}
+.tr-titleA{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+/*数据行*/
+.tr-tableA2{
+    display: block;
+    width: 100%;
+    height: 80%;
+    overflow-y: auto;
+}
+.tr-tableA3{
+    display: block;
+    width: 100%;
+    height: 90%;
+    overflow-y: auto;
+}
+.tr-tableA2 tr {
+    display: table;
+    height: 15px;
+    width: 100%;
+    text-align: center;
+    table-layout: fixed;
+}
+.tr-tempA {
+    height: 15px;
+}
+.tr-tempA-gray {
+    height: 15px;
+    background-color: #cecaca;
+}
+.black_overlay{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=88);
+}
+.white_content {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 55%;
+    height: 55%;
+    padding: 20px;
+    border: 10px solid orange;
+    background-color: white;
+    z-index:1002;
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+}
+.input {
+    width: 80%;
+    font-size: 30px;
+    margin-top: 2%;
+    margin-left: 4%;
+    background-color: #AAA;
+}
+.under-left{
+    margin-left: 30%;
+}
+.white_content a{
+    text-underline: none;
+}
+input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}

@@ -1,0 +1,363 @@
+/* TODO:粘贴内容 */
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+p {
+    display: inline;
+}
+/*10 10 10 5 65*/
+.up1 {
+    width: 100%;
+    height: 10%;
+}
+.img1 {
+    padding-left: 2%;
+    height: 70%;
+    vertical-align:middle;
+}
+.span1 {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 175%;
+    color: #888888;
+}
+.up2 {
+    background-color: rgb(41,76,125);
+    width: 100%;
+    height: 9%;
+    border: rgb(190 190 190	) 2px solid;
+}
+.up1_div {
+    width: 50%;
+    height: 100%;
+}
+.up1_div_onclick {
+    text-decoration: underline;
+}
+.up1_div_init {
+    padding-left: 25%;
+    padding-top: 1%;
+    width: 100%;
+    height: 100%;
+}
+.span2 {
+    font-family: Times New Roma;
+    cursor:pointer;
+    font-size: 170%;
+    color: rgb(248 248 255);
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.up3 {
+    width: 100%;
+    height: 3%;
+    border: rgb(255 255 255)1px solid;
+}
+.up4 {
+    rgb(220 220 220);
+    width: 100%;
+    height: 78%;
+}
+.up4_left {
+    background: url("../img/z.jpg");
+    border:solid rgb(225,225,255) 2px;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+button{
+//边框清掉
+border:0;
+    outline:none;
+//背景颜色清掉
+background-color: transparent;
+}
+.up4_middle{
+    background: -webkit-linear-gradient(left, rgb(41,76,125) , white); /* Safari 5.1 - 6.0 */
+    width: 1%;
+    height: 100%;
+    float: left;
+
+}
+.up4_middle2{
+    background: -webkit-linear-gradient(left,  white,rgb(41,76,125) ); /* Safari 5.1 - 6.0 */
+    width: 1%;
+    height: 100%;
+    float: left;
+
+}
+/*sk main_student_right*/
+.up4_right {
+    background: url("../img/e.jpg");
+    background-size: cover;
+    width: 78%;
+    height: 100%;
+    float: left;
+}
+/*前两行*/
+.tr-table1{
+    height:20%;
+}
+.tr-table3{
+    height:10%;
+}
+.num{
+    height: 50%;
+    text-align: center;
+    background-color: #cecaca;
+}
+.tr-title{
+    height: 50%;
+    text-align: center;
+}
+.tr-title2{
+    height: 100%;
+    text-align: center;
+}
+/*数据行*/
+.tr-table2{
+    display: block;
+    height: 80%;
+    overflow-y: auto;
+}
+.tr-table2 tr {
+    display: table;
+    height: 17%;
+    text-align: center;
+    table-layout: fixed;
+}
+.tr-temp {
+}
+.tr-temp-gray {
+    background-color: rgba(206,202,202,0.7);
+}
+.status-full{
+    color: red;
+}
+/*end*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+.table {
+    width: 100%;
+    height: 10%;
+    background-color: #DDD;
+}
+.elbat {
+    width: 100%;
+    height: 10%;
+    background-color: #EEE;
+}
+.table_img {
+    width: 9%;
+    padding-top: 2%;
+}
+.span3 {
+    font-size: 200%;
+    color: #888888;
+    padding-left: 10%;
+    padding-top: 5%;
+}
+.active{
+
+}
+ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+ul:hover li:not(:hover) a {
+    opacity: 0.2;
+}
+ul li {
+    position: relative;
+    padding-bottom: 18px;
+    cursor: pointer;
+}
+ul li::after {
+    position: absolute;
+    content: "";
+    top: 91%;
+    left: -170px;
+    width: 360%;
+    height: 5px;
+    background: rgb(225 225 225);
+    transform: scaleX(0);
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+ul li:hover::after, ul li.active::after {
+    transform: scaleX(1);
+}
+li {
+    display: inline-block;
+}
+.up2_item {
+    margin-left: 12%;
+    margin-right: 11%;
+    margin-top: 1%;
+}
+.up4_div {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.up4 div:first-child {
+    display: block;
+}
+.span4{
+    font-size: 100%;
+    color: #888888;
+}
+.num{
+    height: 50%;
+    text-align: center;
+    background-color: rgba(206,202,202,0.7);
+}
+.tr-table2{
+    border-spacing: 0;
+    border-collapse: collapse;
+    height: 80%;
+    overflow-y: auto;
+}
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.tr-temp {
+    height: 30%;
+    text-align: center;
+}
+.tr-temp-gray {
+    height: 30%;
+    text-align: center;
+    background-color: rgba(206,202,202,0.7);
+}
+.status-full{
+    color: red;
+}
+.span3 {
+    font-size: 150%;
+    color: darkblue;
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.active2{
+    color: #0d71bb;
+}
+.td-left1{
+    width:30%;
+    background-color: #cecaca
+}
+.table_stu_L_applied{
+    font-size: 50px;
+    width: 80%;
+    height: 70%;
+}
+.under_sk{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    background:url("../img/bg1.png");
+    /*background-size: 100% 100%;*/
+}
+.exit_sk{
+    border: none;
+    color: red;
+    width: 80px;
+    height: 40px;
+    display: inline;
+    background-color: rgba(255,255,255,0.9);
+    margin-top: 5%;
+}
+/*2\sk stu_R_manage*/
+/*页面布局*/
+.sk_stu_R_manage{
+    /*border: 1px solid;*/
+    height:100%;
+    width: 100%;
+    margin-bottom: 3%;
+    padding: 5% 20% 15% 20%;
+    text-align: center;
+    font-size: 25px;
+    background: url("../img/mac.jpg") ;
+    /*background-size: 25% 25%;*/
+    /*opacity: 0.3;*/
+}
+/*table布局*/
+.table_stu_R_manage{
+    text-align: center;
+}
+/*表格的左边第一列*/
+.td-left{
+    width:30%;
+    background-color: #cecaca;
+    font-size: 20px;
+    height: 50px;
+}
+table {
+    background-color: rgba(255, 255, 255, 0.8) ;
+}
+/*sk-end*/
+/*3\sk_student_L_applied*/
+.td-left1{
+    width:30%;
+    background-color: #cecaca
+}
+.table_stu_L_applied{
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+}
+.under_sk{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    background:url("../img/bg1.png");
+    /*background-size: 100% 100%;*/
+}
+.exit_sk{
+    border: none;
+    color: red;
+    width: 80px;
+    height: 40px;
+    display: inline;
+    background-color: rgba(255,255,255,0.9);
+    margin-top: 5%;
+}
+/*sk-end*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+.table {
+    width: 100%;
+    height: 10%;
+    background-color: #DDD;
+}
+.elbat {
+    width: 100%;
+    height: 10%;
+    background-color: #EEE;
+}
+.table_img {
+    width: 9%;
+    padding-top: 2%;
+}
+.span3 {
+    font-size: 200%;
+    color: #888888;
+    padding-left: 10%;
+    padding-top: 5%;
+}
